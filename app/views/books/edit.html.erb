@@ -5,9 +5,9 @@
       <h1 class="title">Editing Book</h1>
 
       <div class="form">
-        <%= form_for(@book)do |f| %>  <!-- コントローラのeditアクションで用意したインスタンス変数@bookを使用 -->
+        <%= form_for(@book)do |f| %>
           <% if @book.errors.any? %>  <!-- バリデーションのエラーメッセージを表示する（@bookにエラー情報が格納されている -->
-            <h2> <%= @book.errors.count %> errors prohibited this obj from being saved </h2>  <!-- 1件でもerroesになってしまうのはOK -->
+            <h2> <%= @book.errors.count %> errors prohibited this obj from being saved </h2>
             <ul>
               <% @book.errors.full_messages.each do |message| %>  <!-- エラーメッセージをリストで表示 -->
                 <li><%= message %></li>
@@ -26,13 +26,13 @@
         </div>
 
         <div class="action row">
-           <%= f.submit "Update Book", class: "btn btn-lg btn btn-primary glyphicon glyphicon-wrench" %>
+           <%= f.submit "Update Book", class: "col-xs-12 btn btn-lg btn btn-primary glyphicon glyphicon-wrench" %>
            <% end %>
         </div>
       </div>
 
 
-    <%= link_to "Show", book_path(@book), class: "books" %>  <!-- class名が違う -->
+    <%= link_to "Show", book_path(@book), class: "book_#{@book.id}" %>
     <%= link_to "back", books_path, class: "back" %>
 
     </div>
