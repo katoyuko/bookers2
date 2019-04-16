@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3 col-md-offset-1">
+      <h1 class="title">User info</h1>
+
+      <div class="form">
+        <%= form_for(@user)do |f| %>
+          <% if @user.errors.any? %>
+            <h2> <%= @user.errors.count %> errors prohibited this obj from being saved </h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+                </ul>
+              <% end %>
+
+            <div class="field row">
+              <label for="name"> Name </label>
+              <%= f.text_field :name, autofocus: true, class: "col-xs-12 name", placeholder: "name" %>
+            </div>
+
+            <div class="field row">
+              <label for="image"> Image </label>
+              <%= f.attachment_field :user_image, class: "col-xs-12 user_image", placeholder: "image" %>
+            </div>
+
+            <div class="field row">
+              <label for="intro"> Introduction </label>
+              <%= f.text_area :introduction, rows:"4", class: "col-xs-12 introduction", placeholder: "introduction" %>
+            </div>
+
+            <div class="action row">
+              <%= f.submit "Update User", class: "btn btn-xs btn btn-default glyphicon glyphicon" %>
+              <% end %>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <p class="company">CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>

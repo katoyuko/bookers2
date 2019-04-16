@@ -1,0 +1,29 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+
+header{
+	background-color: black;
+	color: white;
+	position: relative;
+}
+
+.nav item{
+	color: #9d9d9d;
+}
+
+.sidebar{
+	float: left;
+}
+
+.main{
+	float: left;
+}
+
